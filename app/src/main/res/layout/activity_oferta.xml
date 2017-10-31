@@ -1,46 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_oferta"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
     android:orientation="vertical">
 
-    <FrameLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="16dp"
-            android:text="TeachNow: Ofertas"
-            android:textColor="@android:color/holo_blue_light"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-    </FrameLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
+        android:layout_margin="10dp"
+        android:background="#558B2F"
+        android:padding="10dp"
         android:text="Buscar"
-        android:textColor="@android:color/black"
-        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edit_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/PalabraClave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="Palabra Clave"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColorHint="#E0E0E0"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/provincia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="Provincia"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColorHint="#E0E0E0"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="Categoria"
+        android:inputType="text"
+        android:padding="5dp"
+        android:textColorHint="#E0E0E0"
+        android:textSize="20dp" />
 
     <Button
+
         android:id="@+id/button_send"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="bottom"
+        android:hint="Econtrar Ofertas"
         android:onClick="buscar"
-        android:text="searach"/>
+        android:padding="10dp"
+        android:textColorHint="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
-
