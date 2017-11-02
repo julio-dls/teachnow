@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_oferta"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_light"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.teachnow.com.teachnow.Buscar">
 
     <TextView
         android:layout_width="match_parent"
@@ -55,12 +57,11 @@
         android:textSize="20dp" />
 
     <Button
-
         android:id="@+id/button_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_gravity="bottom"
+        android:layout_margin="10dp"
         android:hint="Econtrar Ofertas"
         android:onClick="buscar"
         android:padding="10dp"
