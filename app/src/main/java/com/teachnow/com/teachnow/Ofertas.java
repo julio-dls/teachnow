@@ -7,7 +7,9 @@ import android.widget.ListView;
 
 public class Ofertas extends AppCompatActivity {
     ListView listView;
-    String[] trabajos = new String[]{"oferta1", "oferta2", "oferta3", "oferta4", "oferta5"};
+    String[] trabajos = new String[]{"Instructor Carrera ANDROID ", "Profesor de la Carrera UX",
+            "INSTRUCTOR CARRERA SEGURIDAD INFORMATICA ", "Docente para programación/diseño web",
+            "Docente de Testing", "Instructor de Wordpress "};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
