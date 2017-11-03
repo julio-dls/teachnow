@@ -7,11 +7,20 @@
     android:orientation="vertical"
     tools:context="com.teachnow.com.teachnow.Ofertas">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toollbar" />
+
     <TextView
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
         android:hint="Ofertas"
+        android:padding="10dp"
         android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         android:textSize="24dp"
         android:textStyle="bold" />
 
@@ -19,6 +28,7 @@
         android:id="@+id/listaOfertas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 </LinearLayout>
 
 

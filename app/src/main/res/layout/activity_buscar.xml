@@ -8,12 +8,15 @@
     android:orientation="vertical"
     tools:context="com.teachnow.com.teachnow.Buscar">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toollbar" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:background="#558B2F"
-        android:padding="10dp"
+        android:padding="5dp"
         android:text="Buscar"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -24,11 +27,11 @@
         android:id="@+id/PalabraClave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@android:color/white"
+        android:layout_margin="5dp"
+        android:background="@drawable/texiew_backgourd"
         android:hint="Palabra Clave"
         android:inputType="text"
-        android:padding="5dp"
+        android:padding="10dp"
         android:textColorHint="#E0E0E0"
         android:textSize="20dp" />
 
@@ -36,11 +39,11 @@
         android:id="@+id/provincia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@android:color/white"
+        android:layout_margin="5dp"
+        android:background="@drawable/texiew_backgourd"
         android:hint="Provincia"
         android:inputType="text"
-        android:padding="5dp"
+        android:padding="10dp"
         android:textColorHint="#E0E0E0"
         android:textSize="20dp" />
 
@@ -48,25 +51,24 @@
         android:id="@+id/categoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@android:color/white"
+        android:layout_margin="5dp"
+        android:background="@drawable/texiew_backgourd"
         android:hint="Categoria"
         android:inputType="text"
-        android:padding="5dp"
+        android:padding="10dp"
         android:textColorHint="#E0E0E0"
         android:textSize="20dp" />
 
     <Button
         android:id="@+id/button_send"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="10dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/buttom_backgorud"
+        android:layout_gravity="center_horizontal"
         android:hint="Econtrar Ofertas"
-        android:onClick="buscar"
         android:padding="10dp"
         android:textColorHint="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
-
 </LinearLayout>
