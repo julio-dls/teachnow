@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".Buscar" />
         <activity android:name=".Ofertas" />
+        <activity android:name=".Activity_Postulacion"></activity>
     </application>
 
 </manifest>
