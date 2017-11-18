@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
+
+import data.QuotesContract;
 import dominio.Empleo;
 
 /**
@@ -21,7 +23,8 @@ public class Model extends SQLiteOpenHelper {
 
     private static final int VERSION_BASEDATOS = 1;
     private static final String NOMBRE_BASEDATOS = "Profesores_Avisos.db";
-    private static final String TABLA_CONTACTOS = "CREATE TABLE Aviso (_id INT PRIMARY KEY, nombre TEXT, descripcion TEXT)";
+    private static final String TABLA_CONTACTOS = "CREATE TABLE " + QuotesContract.QuoteTable.TABLE_NAME +" ( "+ QuotesContract.QuoteTable.ID + " INT PRIMARY KEY, " +
+    QuotesContract.QuoteTable.NOMBRE + " TEXT, "+ QuotesContract.QuoteTable.DESCRIPCION + " TEXT)";
 
     public Model(Context context) {
         super(context, NOMBRE_BASEDATOS, null, VERSION_BASEDATOS);
