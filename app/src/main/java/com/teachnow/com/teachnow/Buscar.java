@@ -2,6 +2,7 @@ package com.teachnow.com.teachnow;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 public class Buscar extends AppCompatActivity {
 
     @Override
