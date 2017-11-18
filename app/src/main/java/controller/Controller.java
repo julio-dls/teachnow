@@ -1,7 +1,7 @@
 package controller;
 
-import android.app.Application;
 import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.List;
 import model.Model;
@@ -19,15 +19,4 @@ public class Controller {
     public Controller(Context context) {
         model = new Model(context);
     }
-
-    public List<String> mostrar() {
-        List<String> Trabajos = new ArrayList<String>();
-
-        for (int i = 0; i < model.obtenerRegistrosEmpleo().size(); i++) {
-            Trabajos.add(model.obtenerRegistrosEmpleo().get(i).getDescripcion());
-        }
-        return Trabajos;
-    }
-
-
 }
