@@ -5,16 +5,18 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-<EditText android:id="@+id/editText"
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:background="#2e3436"
-    android:ems="10"
-    android:inputType="textPersonName"
-    android:text="Enseña Ya"
-    android:textAlignment="center"
-    android:textColor="@android:color/white"
-    xmlns:android="http://schemas.android.com/apk/res/android" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:background="#4b5253"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:text="Enseña Ya"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="33sp" />
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
