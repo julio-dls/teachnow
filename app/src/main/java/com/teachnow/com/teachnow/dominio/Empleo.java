@@ -1,4 +1,4 @@
-package dominio;
+package com.teachnow.com.teachnow.dominio;
 
 /**
  * Created by JULIO on 17/11/2017.

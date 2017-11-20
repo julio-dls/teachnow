@@ -1,4 +1,4 @@
-package model;
+package com.teachnow.com.teachnow.model;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import data.QuotesContract;
-import dominio.Empleo;
+import com.teachnow.com.teachnow.data.QuotesContract;
+import com.teachnow.com.teachnow.dominio.Empleo;
 
 /**
  * Created by JULIO on 15/11/2017.
@@ -20,10 +20,9 @@ import dominio.Empleo;
 
 public class Model extends SQLiteOpenHelper {
 
-
     private static final int VERSION_BASEDATOS = 1;
-    private static final String NOMBRE_BASEDATOS = "Profesores_Avisos.db";
-    private static final String TABLA_CONTACTOS = "CREATE TABLE " + QuotesContract.QuoteTable.TABLE_NAME +" ( "+ QuotesContract.QuoteTable.ID + " INT PRIMARY KEY, " +
+    private static final String NOMBRE_BASEDATOS = "ProfesoresAvisos.db";
+    private static final String TABLA_CONTACTOS = "CREATE TABLE " + QuotesContract.QuoteTable.TABLE_NAME +" ( "+ QuotesContract.QuoteTable.ID + " integer primary key autoincrement, " +
     QuotesContract.QuoteTable.NOMBRE + " TEXT, "+ QuotesContract.QuoteTable.DESCRIPCION + " TEXT)";
 
     public Model(Context context) {
@@ -37,42 +36,41 @@ public class Model extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS Aviso");
+        db.execSQL("DROP TABLE IF EXISTS Avisos");
         onCreate(db);
     }
 
-    public void insertarAviso(int id, String nom, String descripcion) {
+    public void insertarAviso(String nom, String descripcion) {
         SQLiteDatabase db = getWritableDatabase();
         if (db != null) {
-            ContentValues valores = new ContentValues();
-            valores.put("_id", id);
-            valores.put("nombre", nom);
-            valores.put("descripcion", descripcion);
-            db.insert("Aviso", null, valores);
+            ContentValues valor = new ContentValues();
+            valor.put("nombre", nom);
+            valor.put("descripcion", descripcion);
+            db.insert("Avisos", null, valor);
         }
         db.close();
     }
 
     public void modificarAviso(int id, String nom, String descripcion) {
         SQLiteDatabase db = getWritableDatabase();
-        ContentValues valores = new ContentValues();
-        valores.put("_id", id);
-        valores.put("nombre", nom);
-        valores.put("descripcion", descripcion);
-        db.update("Aviso", valores, "_id=" + id, null);
+        ContentValues valor = new ContentValues();
+        valor.put("id", id);
+        valor.put("nombre", nom);
+        valor.put("descripcion", descripcion);
+        db.update("Avisos", valor, "_id=" + id, null);
         db.close();
     }
 
     public void borrarAviso(int id) {
         SQLiteDatabase db = getWritableDatabase();
-        db.delete("Aviso", "_id=" + id, null);
+        db.delete("Avisos", "id=" + id, null);
         db.close();
     }
 
     public Empleo recuperarAviso(int id) {
         SQLiteDatabase db = getReadableDatabase();
-        String[] valores_recuperar = {"_id", "nombre", "descripcion"};
-        Cursor c = db.query("Aviso", valores_recuperar, "_id=" + id, null, null, null, null, null);
+        String[] valores_recuperar = {"id", "nombre", "descripcion"};
+        Cursor c = db.query("Avisos", valores_recuperar, "id=" + id,null, null, null, null, null);
         if (c != null) {
             c.moveToFirst();
         }
@@ -83,16 +81,19 @@ public class Model extends SQLiteOpenHelper {
     }
 
 
-    public List<Empleo> recuperarAviso() {
+    public List<Empleo> recuperarAvisos() {
         SQLiteDatabase db = getReadableDatabase();
+
         List<Empleo> lista_empleo = new ArrayList<Empleo>();
-        String[] valores_recuperar = {"_id", "nombre", "telefono", "email"};
-        Cursor c = db.query("Aviso", valores_recuperar, null, null, null, null, null, null);
+        String[] valores_recuperar = {"id", "nombre", "descripcion"};
+
+        Cursor c = db.query("Avisos", valores_recuperar, null,null, null, null, null, null);
         c.moveToFirst();
         do {
             Empleo empleo = new Empleo(c.getInt(0), c.getString(1), c.getString(2));
             lista_empleo.add(empleo);
         } while (c.moveToNext());
+
         db.close();
         c.close();
         return lista_empleo;
