@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    =======
-
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="82dp"
@@ -19,7 +17,7 @@
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="33sp" />
->>>>>>> Adjuntar_CV
+
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -63,8 +61,8 @@
         android:id="@+id/facebook_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar datos con facebook"
-        android:backgroundTint="#4958BA"
+        android:text="Iniciar datos con Likendin"
+        android:backgroundTint="#0084bf"
         android:textColor="@android:color/white"/>
 
     <TextView

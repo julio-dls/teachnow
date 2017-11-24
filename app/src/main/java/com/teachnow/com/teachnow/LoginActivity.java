@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Activity donde se va a realizar el Login.
@@ -49,13 +50,16 @@ public class LoginActivity extends AppCompatActivity {
                                 .apply();
                         goToFindJobs();
                     }
+                    else {
+                    Toast.makeText(getApplicationContext(), "Datos Incorrecto", Toast.LENGTH_SHORT).show();
+                }
                 }
             });
         }
     }
 
     /**
-     * Redirige hacia la vista de menu de pizzas.
+     *
      */
     private void goToFindJobs() {
         finish();
