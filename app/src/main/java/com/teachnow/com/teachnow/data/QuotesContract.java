@@ -12,7 +12,7 @@ public class QuotesContract {
         public static final String TABLE_NAME = "Avisos";
 
         public static final String ID = "id";
-        public static final String NOMBRE = "nombre";
-        public static final String DESCRIPCION = "descripcion";
+        public static final String NOMBRE = "name";
+        public static final String DESCRIPTION = "description";
     }
 }

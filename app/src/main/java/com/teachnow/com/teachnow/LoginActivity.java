@@ -36,10 +36,10 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
         String password = sharedPreferences.getString("password", "");
-        if(!username.isEmpty() && !password.isEmpty()) {
+        if (!username.isEmpty() && !password.isEmpty()) {
             goToFindJobs();
         } else {
-            enterBtn .setOnClickListener(new View.OnClickListener() {
+            enterBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString())) {
@@ -63,13 +63,9 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void goToFindJobs() {
         finish();
-        startActivity(new Intent(context, MainActivity.class));
+        startActivity(new Intent(context, Buscar.class));
     }
 
-    /**
-     *
-     * @return si los datos ingresados coinciden con las credenciales que definimos.
-     */
     private boolean isLoginSuccessful(String username, String password) {
         return username.equals("user") && password.equals("123");
     }

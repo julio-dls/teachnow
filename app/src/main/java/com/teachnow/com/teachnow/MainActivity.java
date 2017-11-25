@@ -14,7 +14,6 @@ import com.teachnow.com.teachnow.controller.Controller;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buscar;
     private Toolbar toolbar;
     private Controller clr;
     @Override
@@ -41,19 +40,10 @@ public class MainActivity extends AppCompatActivity {
         viewOferta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(), "Buscar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "Ofertas", Toast.LENGTH_SHORT).show();
             }
         });
 
-        buscar = (Button) findViewById(R.id.button_send);
-        buscar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getBaseContext(), "Ofertas", Toast.LENGTH_SHORT).show();
-                Intent buscar = new Intent(getBaseContext(), Ofertas.class);
-                startActivity(buscar);
-            }
-        });
     }
 
 }
