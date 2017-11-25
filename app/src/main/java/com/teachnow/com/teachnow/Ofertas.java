@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
+import com.teachnow.com.teachnow.dominio.Empleo;
 import com.teachnow.com.teachnow.model.Model;
 
 import java.util.ArrayList;
@@ -26,9 +28,13 @@ public class Ofertas extends AppCompatActivity {
     public void showAvisos() {
         Model MDB = new Model(getApplicationContext());
         List<String> list = new ArrayList<String>();
+        Bundle extras = getIntent().getExtras();
 
-        MDB.insertarAviso("Escuela Da Vinci", "Instructor Carrera ANDROID ");
-        MDB.insertarAviso("U. de Palermo",  "Docente de Testing");
+        String empleoSerializado = extras.getString("empleo");
+        Empleo empleo = new Gson().fromJson(empleoSerializado, Empleo.class);
+
+        MDB.insertarAviso(empleo.getNombre(), empleo.getDescripcion());
+        MDB.insertarAviso("U. de Palermo", "Docente de Testing");
         MDB.insertarAviso("U. Salta", "Profesor de la Carrera UX");
         MDB.insertarAviso("UADE", "Instructor de Wordpress ");
         MDB.insertarAviso("UTN", "INSTRUCTOR CARRERA SEGURIDAD INFORMATICA ");
