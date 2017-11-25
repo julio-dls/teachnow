@@ -23,7 +23,7 @@ public class Ofertas extends AppCompatActivity {
 
         String palabraClave = getIntent().getExtras().getString("palabra_clave");
         controller = new Controller(getApplicationContext());
-        //controller.insertNotice();
+        controller.insertNotice();
 
         Bundle extras = getIntent().getExtras();
 

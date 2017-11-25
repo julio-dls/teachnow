@@ -1,6 +1,5 @@
 package com.teachnow.com.teachnow;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,9 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * Activity donde se va a realizar el Login.
- */
 public class LoginActivity extends AppCompatActivity {
 
     private EditText userEt;
@@ -36,10 +32,10 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
         String password = sharedPreferences.getString("password", "");
-        if(!username.isEmpty() && !password.isEmpty()) {
+        if (!username.isEmpty() && !password.isEmpty()) {
             goToFindJobs();
         } else {
-            enterBtn .setOnClickListener(new View.OnClickListener() {
+            enterBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString())) {
@@ -49,8 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                                 .putString("password", passwordEt.getText().toString())
                                 .apply();
                         goToFindJobs();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getApplicationContext(), "Datos Incorrecto", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -58,18 +53,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     *
-     */
     private void goToFindJobs() {
         finish();
         startActivity(new Intent(context, MainActivity.class));
     }
 
-    /**
-     *
-     * @return si los datos ingresados coinciden con las credenciales que definimos.
-     */
     private boolean isLoginSuccessful(String username, String password) {
         return username.equals("user") && password.equals("123");
     }
