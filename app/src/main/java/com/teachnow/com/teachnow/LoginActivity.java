@@ -38,16 +38,16 @@ public class LoginActivity extends AppCompatActivity {
             enterBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString())) {
-                        sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
-                        sharedPreferences.edit()
-                                .putString("username", userEt.getText().toString())
-                                .putString("password", passwordEt.getText().toString())
-                                .apply();
-                        goToFindJobs();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Datos Incorrecto", Toast.LENGTH_SHORT).show();
-                    }
+                if (isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString())) {
+                    sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
+                    sharedPreferences.edit()
+                            .putString("username", userEt.getText().toString())
+                            .putString("password", passwordEt.getText().toString())
+                            .apply();
+                    goToFindJobs();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Datos Incorrecto", Toast.LENGTH_SHORT).show();
+                }
                 }
             });
         }
