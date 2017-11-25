@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import com.google.gson.Gson;
 import com.teachnow.com.teachnow.controller.Controller;
+import com.teachnow.com.teachnow.dominio.Empleo;
 
 public class Ofertas extends AppCompatActivity {
     private EditText editText;
@@ -21,6 +24,11 @@ public class Ofertas extends AppCompatActivity {
         String palabraClave = getIntent().getExtras().getString("palabra_clave");
         controller = new Controller(getApplicationContext());
         //controller.insertNotice();
+
+        Bundle extras = getIntent().getExtras();
+
+        String empleoSerializado = extras.getString("empleo");
+        Empleo empleo = new Gson().fromJson(empleoSerializado, Empleo.class);
 
         listView = (ListView) findViewById(R.id.listaOfertas);
         listView.setAdapter(controller.showEverything(palabraClave));
