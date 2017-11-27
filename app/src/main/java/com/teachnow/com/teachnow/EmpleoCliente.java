@@ -30,10 +30,9 @@ public class EmpleoCliente {
     }
 
     private static EmpleoApi getClient() {
-
         if (client == null) {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("https://my-json-server.typicode.com/julio-dls/teachnow/db")
+                    .baseUrl("https://my-json-server.typicode.com/julio-dls/teachnow/empleo")
                     .addConverterFactory(GsonConverterFactory.create(new Gson()))
                     .build();
             client = retrofit.create(EmpleoApi.class);
@@ -41,7 +40,7 @@ public class EmpleoCliente {
         return client;
     }
 
-    public static void getPizzas(final OnSuccessCallback callback) {
+    public static void getEmpleo(final OnSuccessCallback callback) {
         getClient().getEmpleo().enqueue(new Callback<List<Empleo>>() {
 
             @Override
@@ -51,7 +50,6 @@ public class EmpleoCliente {
 
             @Override
             public void onFailure(Call<List<Empleo>> call, Throwable throwable) {
-
                 Toast.makeText(context, "Fallo al querer conectarse con el servidor", Toast.LENGTH_SHORT).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override

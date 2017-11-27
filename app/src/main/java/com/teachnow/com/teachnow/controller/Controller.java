@@ -25,10 +25,10 @@ public class Controller {
         this.context = context;
     }
 
-    public void insertNotice() {
+    public void insertNotice(String name, String description) {
         mdb = new Model(context);
 
-        mdb.insertarAviso("Escuela Da Vinci", "Instructor Carrera ANDROID ");
+        mdb.insertarAviso(name, description);
         mdb.insertarAviso("U. de Palermo", "Docente de Testing");
         mdb.insertarAviso("U. Salta", "Profesor de la Carrera UX");
         mdb.insertarAviso("UADE", "Instructor de Wordpress ");
