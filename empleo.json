@@ -2,35 +2,35 @@
     {
         "id": 0,
         "name": "ITBA",
-        "descripcion": "Docente para programación/diseño web"
+        "description": "Docente para programación/diseño web"
     },
     {
         "id": 1,
         "name": "Escuela Da Vinci",
-        "descripcion": "Instructor Carrera ANDROID"
+        "description": "Instructor Carrera ANDROID"
 
     },
     {
         "id": 2,
         "name": "U. de Palermo",
-        "descripcion": "Docente de Testing"
+        "description": "Docente de Testing"
 
     },
     {
         "id": 3,
         "name": "U. Salta",
-        "descripcion": "Profesor de la Carrera UX"
+        "description": "Profesor de la Carrera UX"
 
     },
     {
         "id": 4,
         "name": "UADE",
-        "descripcion": "Instructor de Wordpress"
+        "description": "Instructor de Wordpress"
 
     },
     {
         "id": 5,
         "name": "UTN",
-        "descripcion": "INSTRUCTOR CARRERA SEGURIDAD INFORMATICA"
+        "description": "INSTRUCTOR CARRERA SEGURIDAD INFORMATICA"
     }
 ]
