@@ -13,6 +13,6 @@ import retrofit2.http.GET;
 
 public interface EmpleoApi {
 
-    @GET
+    @GET("empleo")
     public Call<List<Empleo>> getEmpleo();
 }

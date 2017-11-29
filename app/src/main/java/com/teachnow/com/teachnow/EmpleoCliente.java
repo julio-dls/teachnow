@@ -1,6 +1,5 @@
 package com.teachnow.com.teachnow;
 
-
 import android.content.Context;
 import android.os.Handler;
 import android.widget.Toast;
@@ -18,6 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by JULIO on 25/11/2017.
+ * https://www.youtube.com/watch?v=hiCfG5WiVF8
  */
 
 public class EmpleoCliente {
@@ -32,7 +32,7 @@ public class EmpleoCliente {
     private static EmpleoApi getClient() {
         if (client == null) {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("https://my-json-server.typicode.com/julio-dls/teachnow/empleo")
+                    .baseUrl("https://my-json-server.typicode.com/julio-dls/teachnow/")
                     .addConverterFactory(GsonConverterFactory.create(new Gson()))
                     .build();
             client = retrofit.create(EmpleoApi.class);
@@ -41,8 +41,8 @@ public class EmpleoCliente {
     }
 
     public static void getEmpleo(final OnSuccessCallback callback) {
-        getClient().getEmpleo().enqueue(new Callback<List<Empleo>>() {
 
+        getClient().getEmpleo().enqueue(new Callback<List<Empleo>>() {
             @Override
             public void onResponse(Call<List<Empleo>> call, Response<List<Empleo>> response) {
                 callback.execute(response.body());

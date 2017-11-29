@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.ArrayAdapter;
 
 import com.teachnow.com.teachnow.R;
+import com.teachnow.com.teachnow.dominio.Empleo;
 import com.teachnow.com.teachnow.model.Model;
 
 import java.util.ArrayList;
@@ -25,15 +26,12 @@ public class Controller {
         this.context = context;
     }
 
-    public void insertNotice(String name, String description) {
+    public void insertNotice(List<Empleo> empleos) {
         mdb = new Model(context);
 
-        mdb.insertarAviso(name, description);
-        mdb.insertarAviso("U. de Palermo", "Docente de Testing");
-        mdb.insertarAviso("U. Salta", "Profesor de la Carrera UX");
-        mdb.insertarAviso("UADE", "Instructor de Wordpress ");
-        mdb.insertarAviso("UTN", "INSTRUCTOR CARRERA SEGURIDAD INFORMATICA ");
-        mdb.insertarAviso("ITBA", "Docente para programación/diseño web");
+        for (int i = 0; i < empleos.size(); i++) {
+            mdb.insertarAviso(empleos.get(i).getName(), empleos.get(i).getDescription());
+        }
     }
 
     public void modifyAv() {

@@ -2,6 +2,7 @@ package com.teachnow.com.teachnow.dominio;
 
 /**
  * Created by JULIO on 17/11/2017.
+ * http://www.jsonschema2pojo.org/ (crear automaticamente el codigo java)
  */
 
 public class Empleo {
@@ -9,10 +10,10 @@ public class Empleo {
     private String name;
     private String description;
 
-    public Empleo(int id, String nombre, String descripcion) {
+    public Empleo(int id, String nombre, String description) {
         this.id = id;
         this.name = nombre;
-        this.description = descripcion;
+        this.description = description;
     }
 
     public int getId() {
@@ -35,7 +36,7 @@ public class Empleo {
         return description;
     }
 
-    public void setDescription(String descripcion) {
-        this.description = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

@@ -1,17 +1,16 @@
 package com.teachnow.com.teachnow;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-
 import com.teachnow.com.teachnow.dominio.Empleo;
-
 import java.util.List;
 
 /**
  * Created by JULIO on 26/11/2017.
+ * https://programacionymas.com/blog/consumir-una-api-usando-retrofit
+ * http://blog.fixter.org/retrofit-el-mejor-cliente-rest/
  */
 
 public class EmpleoAdapter extends BaseAdapter {
@@ -22,8 +21,8 @@ public class EmpleoAdapter extends BaseAdapter {
     private EmpleoAdapter() {
     }
 
-    public EmpleoAdapter(Context context, List<Empleo> pizzaList) {
-        this.empleoList = pizzaList;
+    public EmpleoAdapter(Context context, List<Empleo> empleoList) {
+        this.empleoList = empleoList;
         this.context = context;
     }
 
@@ -48,11 +47,11 @@ public class EmpleoAdapter extends BaseAdapter {
 
         TextView nombreTv = (TextView) pizzaView.findViewById(R.id.nombre);
         TextView precioTv = (TextView) pizzaView.findViewById(R.id.precio);
-        ImageView fotoImg = (ImageView) pizzaView.findViewById(R.id.foto);
+        ImageView fotoImg = (ImageView) pizzaView.findViewById(R.id.foto);*/
 
         Empleo empleo = empleoList.get(i);
 
-        nombreTv.setText(empleo.getNombre());
+        /*nombreTv.setText(empleo.getNombre());
         precioTv.setText(Double.toString(pizza.getPrecio()));
         fotoImg.setImageResource(pizza.getFotoId());
         pizzaView.setOnClickListener(new PizzaOnClickListener(context, pizza));*/
