@@ -1,36 +1,38 @@
-[
-    {
-        "id": 0,
-        "name": "ITBA",
-        "description": "Docente para programación/diseño web"
-    },
-    {
-        "id": 1,
-        "name": "Escuela Da Vinci",
-        "description": "Instructor Carrera ANDROID"
+{
+    "db": [
+        {
+            "id": 0,
+            "name": "ITBA",
+            "description": "Docente para programación/diseño web"
+        },
+        {
+            "id": 1,
+            "name": "Escuela Da Vinci",
+            "description": "Instructor Carrera ANDROID"
 
-    },
-    {
-        "id": 2,
-        "name": "U. de Palermo",
-        "description": "Docente de Testing"
+        },
+        {
+            "id": 2,
+            "name": "U. de Palermo",
+            "description": "Docente de Testing"
 
-    },
-    {
-        "id": 3,
-        "name": "U. Salta",
-        "description": "Profesor de la Carrera UX"
+        },
+        {
+            "id": 3,
+            "name": "U. Salta",
+            "description": "Profesor de la Carrera UX"
 
-    },
-    {
-        "id": 4,
-        "name": "UADE",
-        "description": "Instructor de Wordpress"
+        },
+        {
+            "id": 4,
+            "name": "UADE",
+            "description": "Instructor de Wordpress"
 
-    },
-    {
-        "id": 5,
-        "name": "UTN",
-        "description": "INSTRUCTOR CARRERA SEGURIDAD INFORMATICA"
-    }
-]
+        },
+        {
+            "id": 5,
+            "name": "UTN",
+            "description": "INSTRUCTOR CARRERA SEGURIDAD INFORMATICA"
+        }
+      ]
+}
