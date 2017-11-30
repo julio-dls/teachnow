@@ -29,8 +29,10 @@ public class Controller {
     public void insertNotice(List<Empleo> empleos) {
         mdb = new Model(context);
 
-        for (int i = 0; i < empleos.size(); i++) {
-            mdb.insertarAviso(empleos.get(i).getName(), empleos.get(i).getDescription());
+        if (empleos.isEmpty() == false) {
+            for (int i = 0; i < empleos.size(); i++) {
+                mdb.insertarAviso(empleos.get(i).getName(), empleos.get(i).getDescription());
+            }
         }
     }
 
