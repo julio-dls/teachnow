@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * http://www.proyectosimio.com/es/programacion-android-base-de-datos-i-modelo-vista-controlador/
+ * https://androidexample.com/Use_MVC_Pattern_To_Create_Very_Basic_Shopping_Cart__-_Android_Example/index.php?view=article_discription&aid=116
  * Created by JULIO on 15/11/2017.
  */
-//http://www.proyectosimio.com/es/programacion-android-base-de-datos-i-modelo-vista-controlador/
-//https://androidexample.com/Use_MVC_Pattern_To_Create_Very_Basic_Shopping_Cart__-_Android_Example/index.php?view=article_discription&aid=116
+
 public class Controller {
 
     private Model mdb;
@@ -36,33 +37,19 @@ public class Controller {
         }
     }
 
+    public List<Empleo> showAll() {
+        mdb = new Model(context);
+        return mdb.recuperarAvisos();
+    }
+
+    public List<Empleo> showEverything(String palabraClave) {
+        mdb = new Model(context);
+        return mdb.recuperarAviso(palabraClave).isEmpty() ? showAll() : mdb.recuperarAviso(palabraClave);
+    }
+
     public void modifyAv() {
     }
 
     public void removeAv() {
-    }
-
-    public void searchAv() {
-    }
-
-
-    public ArrayAdapter<String> showEverything(String palabraClave) {
-        mdb = new Model(context);
-        List<String> list = new ArrayList<String>();
-
-        if (palabraClave.isEmpty() != true) {
-            for (int i = 0; i < mdb.recuperarAviso(palabraClave).size(); i++) {
-                list.add(mdb.recuperarAviso(palabraClave).get(i).getName());
-                list.add(mdb.recuperarAviso(palabraClave).get(i).getDescription());
-            }
-            adapter = new ArrayAdapter<>(context, R.layout.support_simple_spinner_dropdown_item, list);
-        } else {
-            for (int i = 0; i < mdb.recuperarAvisos().size(); i++) {
-                list.add(mdb.recuperarAvisos().get(i).getName());
-                list.add(mdb.recuperarAvisos().get(i).getDescription());
-            }
-            adapter = new ArrayAdapter<>(context, R.layout.support_simple_spinner_dropdown_item, list);
-        }
-        return adapter;
     }
 }

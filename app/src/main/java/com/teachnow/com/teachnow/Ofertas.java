@@ -20,6 +20,6 @@ public class Ofertas extends AppCompatActivity {
 
         String palabraClave = getIntent().getExtras().getString("palabra_clave");
         listView = (ListView) findViewById(R.id.listaOfertas);
-        listView.setAdapter(controller.showEverything(palabraClave.toString()));
+        listView.setAdapter(new EmpleoAdapter(getBaseContext(), controller.showEverything(palabraClave)));
     }
 }
