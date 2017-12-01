@@ -9,11 +9,13 @@ public class Empleo {
     private int id;
     private String name;
     private String description;
+    private int photoId;
 
-    public Empleo(int id, String nombre, String description) {
+    public Empleo(int id, String nombre, String description, int photoId) {
         this.id = id;
         this.name = nombre;
         this.description = description;
+        this.photoId=photoId;
     }
 
     public int getId() {
@@ -38,5 +40,13 @@ public class Empleo {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getPhotoId() {
+        return photoId;
+    }
+
+    public void setPhotoId(int photoId) {
+        this.photoId = photoId;
     }
 }

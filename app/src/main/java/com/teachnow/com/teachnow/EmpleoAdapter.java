@@ -57,7 +57,7 @@ public class EmpleoAdapter extends BaseAdapter {
 
         nombre.setText(empleo.getName());
         descripcion.setText(empleo.getDescription());
-        logoImg.setImageResource(R.drawable.office_working);
+        logoImg.setImageResource(empleo.getPhotoId());
         return ofertaView;
     }
 }

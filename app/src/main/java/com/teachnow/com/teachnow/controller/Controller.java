@@ -32,7 +32,7 @@ public class Controller {
 
         if (empleos.isEmpty() == false) {
             for (int i = 0; i < empleos.size(); i++) {
-                mdb.insertarAviso(empleos.get(i).getName(), empleos.get(i).getDescription());
+                mdb.insertarAviso(empleos.get(i).getName(), empleos.get(i).getDescription(), empleos.get(i).getPhotoId());
             }
         }
     }
@@ -44,7 +44,7 @@ public class Controller {
 
     public List<Empleo> showEverything(String palabraClave) {
         mdb = new Model(context);
-        return mdb.recuperarAviso(palabraClave).isEmpty() ? showAll() : mdb.recuperarAviso(palabraClave);
+        return palabraClave.isEmpty() ? showAll() : mdb.recuperarAviso(palabraClave);
     }
 
     public void modifyAv() {

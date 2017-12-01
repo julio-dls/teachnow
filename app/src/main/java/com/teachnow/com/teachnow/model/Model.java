@@ -24,7 +24,7 @@ public class Model extends SQLiteOpenHelper {
     private static final int VERSION_BASEDATOS = 1;
     private static final String NOMBRE_BASEDATOS = "ProfesoresAvisos.db";
     private static final String TABLA_AVISOS = "CREATE TABLE " + QuotesContract.QuoteTable.TABLE_NAME + " ( " + QuotesContract.QuoteTable.ID + " integer primary key autoincrement, " +
-            QuotesContract.QuoteTable.NOMBRE + " TEXT, " + QuotesContract.QuoteTable.DESCRIPTION + " TEXT)";
+            QuotesContract.QuoteTable.NOMBRE + " TEXT, " + QuotesContract.QuoteTable.DESCRIPTION + " TEXT, " + QuotesContract.QuoteTable.PHOTOID + " integer)";
 
     public Model(Context context) {
         super(context, NOMBRE_BASEDATOS, null, VERSION_BASEDATOS);
@@ -41,12 +41,13 @@ public class Model extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertarAviso(String name, String description) {
+    public void insertarAviso(String name, String description, int photoId) {
         SQLiteDatabase db = getWritableDatabase();
         if (db != null) {
             ContentValues valor = new ContentValues();
             valor.put("name", name);
             valor.put("description", description);
+            valor.put("photoid", photoId);
             db.insert("Avisos", null, valor);
         }
         db.close();
@@ -72,13 +73,13 @@ public class Model extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         List<Empleo> empleos = new ArrayList<Empleo>();
-        String[] valores_recuperar = {"id", "name", "description"};
+        String[] valores_recuperar = {"id", "name", "description", "photoid"};
 
         Cursor c = db.query(false, "Avisos", valores_recuperar, "description LIKE '%" + description + "%'", null, null, null, null, null);
         if (c.moveToFirst() == true) {
             c.moveToFirst();
             do {
-                Empleo empleo = new Empleo(c.getInt(0), c.getString(1), c.getString(2));
+                Empleo empleo = new Empleo(c.getInt(0), c.getString(1), c.getString(2),c.getInt(3));
                 empleos.add(empleo);
             } while (c.moveToNext());
         }
@@ -89,13 +90,13 @@ public class Model extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         List<Empleo> lista_empleo = new ArrayList<Empleo>();
-        String[] valores_recuperar = {"id", "name", "description"};
+        String[] valores_recuperar = {"id", "name", "description", "photoid"};
 
         Cursor c = db.query("Avisos", valores_recuperar, null, null, null, null, null, null);
         c.moveToFirst();
         if (c.moveToFirst() == true) {
             do {
-                Empleo empleo = new Empleo(c.getInt(0), c.getString(1), c.getString(2));
+                Empleo empleo = new Empleo(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3));
                 lista_empleo.add(empleo);
             } while (c.moveToNext());
         }
