@@ -1,6 +1,5 @@
 package com.teachnow.com.teachnow;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.teachnow.com.teachnow.controller.Controller;
+//https://expocodetech.com/como-crear-una-lista-con-recyclerview/
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(), "Ofertas", Toast.LENGTH_SHORT).show();
             }
         });
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
     }
 }
