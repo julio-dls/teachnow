@@ -1,0 +1,5 @@
+- mejorar el search con filtros
+- funcion de adjuntar cv
+- funcina de enviar por email
+- Vista perfil
+- Seguimiento persistido sharedpreferences
