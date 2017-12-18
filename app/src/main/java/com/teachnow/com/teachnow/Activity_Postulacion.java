@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.teachnow.com.teachnow.correo.SendMail;
@@ -15,11 +16,20 @@ public class Activity_Postulacion extends AppCompatActivity {
     private Button button_adjuntar;
     private Button button_enviar;
     private String path_archivo;
+    private EditText nombre;
+    private EditText edad;
+    private EditText profesion;
+    private EditText localidad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__postulacion);
+
+        nombre = (EditText) findViewById(R.id.nombre);
+        edad = (EditText) findViewById(R.id.edad);
+        profesion = (EditText) findViewById(R.id.profesion);
+        localidad = (EditText) findViewById(R.id.localidad);
 
         button_adjuntar = (Button) findViewById(R.id.adjuntar_btn);
         button_enviar = (Button) findViewById(R.id.send_mail_btn);
@@ -48,7 +58,10 @@ public class Activity_Postulacion extends AppCompatActivity {
                             try {
                                 String email = "quirogajulio27@gmail.com";
                                 String subject = "Envio de Postulacion para esta Vacante";
-                                String message = "Fecha ";
+                                String message = "Nombre: " + nombre.getText().toString() + "\n" +
+                                        "Edad: " + edad.getText().toString() + "\n" +
+                                        "Profesion: " + profesion.getText().toString() + "\n" +
+                                        "Localidad: " + localidad.getText().toString();
 
                                 SendMail sm = new SendMail(getApplicationContext(), email, subject, message, path_archivo);
                                 sm.execute();
@@ -57,6 +70,7 @@ public class Activity_Postulacion extends AppCompatActivity {
                             }
                         }
                     }).start();
+                    Toast.makeText(getBaseContext(), "Correo Enviado Correctamente", Toast.LENGTH_SHORT).show();
                     break;
             }
         }

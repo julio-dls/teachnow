@@ -12,7 +12,6 @@ import android.view.View;
 import com.teachnow.com.teachnow.controller.Controller;
 
 public class Ofertas extends AppCompatActivity {
-    private EditText editText;
     private ListView listView;
     private Controller controller;
 
@@ -23,15 +22,15 @@ public class Ofertas extends AppCompatActivity {
         controller = new Controller(getApplicationContext());
 
         String palabraClave = getIntent().getExtras().getString("palabra_clave");
-
         listView = (ListView) findViewById(R.id.listaOfertas);
+
         listView.setAdapter(new EmpleoAdapter(getBaseContext(), controller.showEverything(palabraClave)));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 finish();
-                startActivity(new Intent(getBaseContext(), Activity_Postulacion.class));
+                startActivity(new Intent(getApplicationContext(), Activity_Postulacion.class));
             }
         });
     }

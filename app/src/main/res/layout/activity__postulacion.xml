@@ -40,21 +40,25 @@
         android:padding="20dp">
 
         <EditText
+            android:id="@+id/nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre" />
 
         <EditText
+            android:id="@+id/edad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Edad" />
 
         <EditText
+            android:id="@+id/profesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Profesión" />
 
         <EditText
+            android:id="@+id/localidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Localidad" />
