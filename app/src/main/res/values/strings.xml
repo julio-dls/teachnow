@@ -17,4 +17,6 @@
     <string name="title_activity_item">item</string>
     <string name="title_activity_emplo_item">emplo_item</string>
     <string name="title_activity_empleo_item">empleo_item</string>
+    <string name="title_activity_explorador_archivo">explorador_archivo</string>
+    <string name="title_activity_explorador_archivos">explorador_archivos</string>
 </resources>

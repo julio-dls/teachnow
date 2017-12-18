@@ -60,7 +60,7 @@
             android:hint="Localidad" />
 
         <Button
-            android:id="@+id/enter_btn"
+            android:id="@+id/adjuntar_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -69,12 +69,12 @@
             android:backgroundTint="@color/colorPrimaryDark"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:text="Adjuntar CV"
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
             android:textColor="#FFFFFFFF"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <Button
-            android:id="@+id/facebook_btn"
+            android:id="@+id/send_mail_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
