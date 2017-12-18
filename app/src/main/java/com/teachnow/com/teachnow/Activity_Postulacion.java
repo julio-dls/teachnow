@@ -1,16 +1,19 @@
 package com.teachnow.com.teachnow;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.teachnow.com.teachnow.controller.Controller;
 import com.teachnow.com.teachnow.correo.SendMail;
-
+//https://androidstudiofaqs.com/tutoriales/personalizar-textview-en-android
 public class Activity_Postulacion extends AppCompatActivity {
 
     private Button button_adjuntar;
@@ -20,11 +23,20 @@ public class Activity_Postulacion extends AppCompatActivity {
     private EditText edad;
     private EditText profesion;
     private EditText localidad;
+    private TextView descripsion_empleo;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__postulacion);
+
+        descripsion_empleo = (TextView) findViewById(R.id.title_job);
+
+        sharedPreferences = this.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
+        String empleo_seleccionardo = sharedPreferences.getString("seleccion_empleos", "");
+
+        descripsion_empleo.setText("Postulacion: " + "\n" + empleo_seleccionardo);
 
         nombre = (EditText) findViewById(R.id.nombre);
         edad = (EditText) findViewById(R.id.edad);

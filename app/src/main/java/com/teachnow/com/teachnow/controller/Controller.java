@@ -47,6 +47,13 @@ public class Controller {
         return palabraClave.isEmpty() ? showAll() : mdb.recuperarAviso(palabraClave);
     }
 
+    public String obtenerEmpleoSelecionado(Empleo empleo) {
+        mdb = new Model(context);
+        String nombre = mdb.recuperarAvisoPorId(empleo.getId()).getName().toString();
+        String descripcion = mdb.recuperarAvisoPorId(empleo.getId()).getDescription().toString();
+        return "Titulo: " + nombre + "\n" + " Descripcion: " + descripcion;
+    }
+
     public void modifyAv() {
     }
 

@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:ems="10"
-        android:paddingTop="10dp"
         android:inputType="textPersonName"
-        android:text="Postularse al empleo"
+        android:paddingTop="10dp"
+        android:text="Empleo Seleccionado"
         android:textAlignment="center"
         android:textColor="#34373b"
         android:textSize="22sp" />
@@ -21,14 +21,18 @@
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/title_job"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine"
         android:padding="@dimen/activity_vertical_margin"
-        android:text="Profesor Materias Varias Empleo Faculta Da Vinci\nVilla Devoto"
+        android:paddingTop="20dp"
+        android:scrollbars="vertical"
+        android:text="Empleo"
         android:textAlignment="center"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="italic"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -75,7 +79,7 @@
             android:text="Adjuntar CV"
             android:textAlignment="center"
             android:textColor="#FFFFFFFF"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/send_mail_btn"

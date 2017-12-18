@@ -79,7 +79,7 @@ public class Model extends SQLiteOpenHelper {
         if (c.moveToFirst() == true) {
             c.moveToFirst();
             do {
-                Empleo empleo = new Empleo(c.getInt(0), c.getString(1), c.getString(2),c.getInt(3));
+                Empleo empleo = new Empleo(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3));
                 empleos.add(empleo);
             } while (c.moveToNext());
         }
@@ -103,5 +103,19 @@ public class Model extends SQLiteOpenHelper {
         db.close();
         c.close();
         return lista_empleo;
+    }
+
+    public Empleo recuperarAvisoPorId(int id) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] valores_recuperar = {"id", "name", "description", "photoid"};
+
+        Cursor c = db.query(false, "Avisos", valores_recuperar, "id = '" + id + "'", null, null, null, null, null);
+
+        if (c != null) {
+            c.moveToFirst();
+        }
+        Empleo empleo = new Empleo(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3));
+        return empleo;
     }
 }

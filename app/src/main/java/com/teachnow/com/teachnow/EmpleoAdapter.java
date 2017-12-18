@@ -54,6 +54,7 @@ public class EmpleoAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View ofertaView, ViewGroup viewGroup) {
+        //http://xurxodeveloper.blogspot.com.ar/2015/04/android-tip-como-crear-imagenes-circulares.html
         ofertaView = LayoutInflater.from(context).inflate(R.layout.activity_empleo_item, viewGroup, false);
 
         TextView nombre = (TextView) ofertaView.findViewById(R.id.titulo);
