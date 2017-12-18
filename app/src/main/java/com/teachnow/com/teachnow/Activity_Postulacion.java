@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.teachnow.com.teachnow.controller.Controller;
 import com.teachnow.com.teachnow.correo.SendMail;
+
 //https://androidstudiofaqs.com/tutoriales/personalizar-textview-en-android
 public class Activity_Postulacion extends AppCompatActivity {
 
@@ -25,6 +26,7 @@ public class Activity_Postulacion extends AppCompatActivity {
     private EditText localidad;
     private TextView descripsion_empleo;
     private SharedPreferences sharedPreferences;
+    String empleo_seleccionardo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class Activity_Postulacion extends AppCompatActivity {
         descripsion_empleo = (TextView) findViewById(R.id.title_job);
 
         sharedPreferences = this.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
-        String empleo_seleccionardo = sharedPreferences.getString("seleccion_empleos", "");
+        empleo_seleccionardo = sharedPreferences.getString("seleccion_empleos", "");
 
         descripsion_empleo.setText("Postulacion: " + "\n" + empleo_seleccionardo);
 
@@ -69,11 +71,12 @@ public class Activity_Postulacion extends AppCompatActivity {
                         public void run() {
                             try {
                                 String email = "quirogajulio27@gmail.com";
-                                String subject = "Envio de Postulacion para esta Vacante";
+                                String subject = "Postulacion para esta Vacante";
                                 String message = "Nombre: " + nombre.getText().toString() + "\n" +
                                         "Edad: " + edad.getText().toString() + "\n" +
                                         "Profesion: " + profesion.getText().toString() + "\n" +
-                                        "Localidad: " + localidad.getText().toString();
+                                        "Localidad: " + localidad.getText().toString() + "\n" +
+                                        "Datos del Empleo Seleccionado: " + empleo_seleccionardo;
 
                                 SendMail sm = new SendMail(getApplicationContext(), email, subject, message, path_archivo);
                                 sm.execute();
