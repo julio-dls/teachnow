@@ -2,6 +2,13 @@ package com.teachnow.com.teachnow;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +64,15 @@ public class EmpleoAdapter extends BaseAdapter {
 
         nombre.setText(empleo.getName());
         descripcion.setText(empleo.getDescription());
-        logoImg.setImageResource(empleo.getPhotoId());
+
+        Drawable originalDrawable = ofertaView.getResources().getDrawable(empleo.getPhotoId());
+        Bitmap originalBitmap = ((BitmapDrawable) originalDrawable).getBitmap();
+        //creamos el drawable redondeado
+        RoundedBitmapDrawable roundedDrawable = RoundedBitmapDrawableFactory.create(ofertaView.getResources(), originalBitmap);
+        //asignamos el CornerRadius
+        roundedDrawable.setCornerRadius(originalBitmap.getHeight());
+
+        logoImg.setImageDrawable(roundedDrawable);
         return ofertaView;
     }
 }
