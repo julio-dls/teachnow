@@ -41,6 +41,8 @@ public class Activity_Postulacion extends AppCompatActivity {
         descripsion_empleo.setText("Postulacion: " + "\n" + empleo_seleccionardo);
 
         nombre = (EditText) findViewById(R.id.nombre);
+        nombre.setText(sharedPreferences.getString("username", ""));
+        nombre.setEnabled(false);
         edad = (EditText) findViewById(R.id.edad);
         profesion = (EditText) findViewById(R.id.profesion);
         localidad = (EditText) findViewById(R.id.localidad);
@@ -76,7 +78,16 @@ public class Activity_Postulacion extends AppCompatActivity {
                                         "Edad: " + edad.getText().toString() + "\n" +
                                         "Profesion: " + profesion.getText().toString() + "\n" +
                                         "Localidad: " + localidad.getText().toString() + "\n" +
-                                        "Datos del Empleo Seleccionado: " + empleo_seleccionardo;
+                                        "Datos de la VAcante: " + "\n" +
+                                        empleo_seleccionardo + "\n" +
+                                        "Datos Adicionales del Postulante: " +
+                                        "Disponibilidad para viajar: " + sharedPreferences.getString("Disponibilidad_Viajar", "") + "\n" +
+                                        "Vehiculo Porpio: " + sharedPreferences.getString("Vehiculo_propio", "") + "\n" +
+                                        "Contrato Temporal: " + sharedPreferences.getString("Contrato_Temporal", "") + "\n" +
+                                        "Contrato Permanente: " + sharedPreferences.getString("Contrato_Permanente", "") + "\n" +
+                                        "Tipo Jornada Completa: " + sharedPreferences.getString("Tipo_Jornada_Completa", "") + "\n" +
+                                        "Tipo Jornada Parcial: " + sharedPreferences.getString("Tipo_Jornada_Parcial", "") + "\n" +
+                                        "Oferta para discapacitado: " + sharedPreferences.getString("Oferta_Discapacitado", "");
 
                                 SendMail sm = new SendMail(getApplicationContext(), email, subject, message, path_archivo);
                                 sm.execute();

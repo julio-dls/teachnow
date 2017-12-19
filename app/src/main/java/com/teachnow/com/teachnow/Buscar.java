@@ -72,30 +72,30 @@ public class Buscar extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.Temporal:
                 if (checked) {
-                    sharedPreferences.edit().putString("Contrato_Temporal", "True").commit();
+                    sharedPreferences.edit().putString("Contrato_Temporal", "Si").commit();
                 } else {
-                    sharedPreferences.edit().putString("Contrato_Temporal", "False").commit();
+                    sharedPreferences.edit().putString("Contrato_Temporal", "No").commit();
                 }
                 break;
             case R.id.Permanente:
                 if (checked) {
-                    sharedPreferences.edit().putString("Contrato_Permanente", "True").commit();
+                    sharedPreferences.edit().putString("Contrato_Permanente", "Si").commit();
                 } else {
-                    sharedPreferences.edit().putString("Contrato_Permanente", "False").commit();
+                    sharedPreferences.edit().putString("Contrato_Permanente", "No").commit();
                 }
                 break;
             case R.id.vehiculo:
                 if (checked) {
-                    sharedPreferences.edit().putString("Con_Vehiculo", "True").commit();
+                    sharedPreferences.edit().putString("Vehiculo_propio", "Si").commit();
                 } else {
-                    sharedPreferences.edit().putString("Con_Vehiculo", "False").commit();
+                    sharedPreferences.edit().putString("Vehiculo_propio", "No").commit();
                 }
                 break;
             case R.id.viajar:
                 if (checked) {
-                    sharedPreferences.edit().putString("Disponibilidad_Viajar", "True").commit();
+                    sharedPreferences.edit().putString("Disponibilidad_Viajar", "Si").commit();
                 } else {
-                    sharedPreferences.edit().putString("Disponibilidad_Viajar", "False").commit();
+                    sharedPreferences.edit().putString("Disponibilidad_Viajar", "No").commit();
                 }
                 break;
         }
@@ -107,15 +107,15 @@ public class Buscar extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.fulltime:
                 if (checked)
-                    sharedPreferences.edit().putString("Tipo_Jornada_Completa", "True").commit();
+                    sharedPreferences.edit().putString("Tipo_Jornada_Completa", "Si").commit();
                 else
-                    sharedPreferences.edit().putString("Tipo_Jornada_Completa", "False").commit();
+                    sharedPreferences.edit().putString("Tipo_Jornada_Completa", "No").commit();
                 break;
             case R.id.parttime:
                 if (checked)
-                    sharedPreferences.edit().putString("Tipo_Jornada_Parcial", "True").commit();
+                    sharedPreferences.edit().putString("Tipo_Jornada_Parcial", "Si").commit();
                 else
-                    sharedPreferences.edit().putString("Tipo_Jornada_Parcial", "True").commit();
+                    sharedPreferences.edit().putString("Tipo_Jornada_Parcial", "No").commit();
 
                 break;
         }

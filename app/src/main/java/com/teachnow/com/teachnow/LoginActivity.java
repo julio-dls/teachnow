@@ -59,6 +59,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean isLoginSuccessful(String username, String password) {
-        return username.equals("user") && password.equals("123");
+        return username.equals("Miguel") && password.equals("123");
     }
 }
