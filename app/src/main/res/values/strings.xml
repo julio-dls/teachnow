@@ -22,4 +22,9 @@
     <string name="title_activity_perfil">perfil</string>
     <string name="title_activity_navigation">Navigation</string>
     <string name="title_activity_nav_header_navigation">nav_header_navigation</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
