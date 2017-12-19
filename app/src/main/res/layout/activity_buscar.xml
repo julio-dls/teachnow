@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:background="@drawable/buttom_backgorud"
+            android:onClick="onCheckboxClicked"
             android:padding="5sp"
             android:text="Puedo Viajar"
             android:textColor="@android:color/white"
@@ -58,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:background="@drawable/buttom_backgorud"
+            android:onClick="onCheckboxClicked"
             android:padding="5sp"
             android:text="Vehiculo Propio"
             android:textColor="@android:color/white"
@@ -72,22 +74,24 @@
         android:orientation="horizontal">
 
         <CheckBox
-            android:id="@+id/checkbox_meat"
+            android:id="@+id/Permanente"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:background="@drawable/buttom_backgorud"
+            android:onClick="onCheckboxClicked"
             android:padding="5sp"
             android:text="Permanente"
             android:textColor="@android:color/white"
             android:textSize="14sp" />
 
         <CheckBox
-            android:id="@+id/checkbox_cheese"
+            android:id="@+id/Temporal"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:background="@drawable/buttom_backgorud"
+            android:onClick="onCheckboxClicked"
             android:padding="5sp"
             android:text="Temporal"
             android:textColor="@android:color/white"
@@ -101,18 +105,19 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radio_pirates"
+            android:id="@+id/fulltime"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
             android:background="@drawable/buttom_backgorud"
+            android:onClick="onRadioButtonClicked"
             android:padding="5sp"
             android:text="Full Time"
             android:textColor="@android:color/white"
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/radio_ninjas"
+            android:id="@+id/parttime"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
@@ -124,15 +129,19 @@
     </RadioGroup>
 
     <Switch
-        android:id="@+id/simpleSwitch"
+        android:id="@+id/discapacidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10sp"
         android:background="@drawable/buttom_backgorud"
+        android:onClick="onSwitchChecked"
         android:padding="5sp"
         android:text="Persona con Discapacidad"
         android:textColor="@android:color/white"
+        android:textOff="Off"
+        android:textOn="On"
+        android:checked="false"
         android:textSize="14sp" />
 
     <LinearLayout

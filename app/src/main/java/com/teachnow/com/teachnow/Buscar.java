@@ -2,6 +2,7 @@ package com.teachnow.com.teachnow;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -17,14 +19,18 @@ import com.teachnow.com.teachnow.controller.Controller;
 import com.teachnow.com.teachnow.dominio.Empleo;
 
 import java.util.List;
+
 //https://developer.android.com/guide/topics/ui/controls/togglebutton.html
 //https://developer.android.com/guide/topics/ui/controls/radiobutton.html
 //https://developer.android.com/guide/topics/ui/controls/checkbox.html
+// checkbox tutorial https://androiddlaprogramistow.wordpress.com/tag/oncheckboxclicked/
 public class Buscar extends AppCompatActivity {
 
     private Button buscar;
+    private Switch simpleSwitch;
     private EditText palabraClaveEt;
     private Controller controller;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,8 @@ public class Buscar extends AppCompatActivity {
             }
         });
 
+        sharedPreferences = getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
+
         buscar = (Button) findViewById(R.id.button_send);
         palabraClaveEt = (EditText) findViewById(R.id.PalabraClave);
 
@@ -49,6 +57,7 @@ public class Buscar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getBaseContext(), "Ofertas", Toast.LENGTH_SHORT).show();
+
                 Intent ofts = new Intent(getBaseContext(), Ofertas.class);
                 ofts.putExtra("palabra_clave", palabraClaveEt.getText().toString());
                 startActivity(ofts);
@@ -57,41 +66,67 @@ public class Buscar extends AppCompatActivity {
     }
 
     public void onCheckboxClicked(View view) {
-        // Is the view now checked?
+
         boolean checked = ((CheckBox) view).isChecked();
 
-        // Check which checkbox was clicked
         switch (view.getId()) {
-            case R.id.checkbox_meat:
+            case R.id.Temporal:
                 if (checked) {
-                    // Put some meat on the sandwich
+                    sharedPreferences.edit().putString("Contrato_Temporal", "True").commit();
                 } else {
-                    // Remove the meat
+                    sharedPreferences.edit().putString("Contrato_Temporal", "False").commit();
                 }
                 break;
-            case R.id.checkbox_cheese:
+            case R.id.Permanente:
                 if (checked) {
-                    // Cheese me
+                    sharedPreferences.edit().putString("Contrato_Permanente", "True").commit();
                 } else {
-                    // I'm lactose intolerant
+                    sharedPreferences.edit().putString("Contrato_Permanente", "False").commit();
+                }
+                break;
+            case R.id.vehiculo:
+                if (checked) {
+                    sharedPreferences.edit().putString("Con_Vehiculo", "True").commit();
+                } else {
+                    sharedPreferences.edit().putString("Con_Vehiculo", "False").commit();
+                }
+                break;
+            case R.id.viajar:
+                if (checked) {
+                    sharedPreferences.edit().putString("Disponibilidad_Viajar", "True").commit();
+                } else {
+                    sharedPreferences.edit().putString("Disponibilidad_Viajar", "False").commit();
                 }
                 break;
         }
     }
+
     public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.radio_pirates:
+        switch (view.getId()) {
+            case R.id.fulltime:
                 if (checked)
-                    // Pirates are the best
-                    break;
-            case R.id.radio_ninjas:
+                    sharedPreferences.edit().putString("Tipo_Jornada_Completa", "True").commit();
+                else
+                    sharedPreferences.edit().putString("Tipo_Jornada_Completa", "False").commit();
+                break;
+            case R.id.parttime:
                 if (checked)
-                    // Ninjas rule
-                    break;
+                    sharedPreferences.edit().putString("Tipo_Jornada_Parcial", "True").commit();
+                else
+                    sharedPreferences.edit().putString("Tipo_Jornada_Parcial", "True").commit();
+
+                break;
         }
+    }
+
+    public void onSwitchChecked(View view) {
+        simpleSwitch = (Switch) findViewById(R.id.discapacidad);
+
+        if (simpleSwitch.isChecked())
+            sharedPreferences.edit().putString("Oferta_Discapacitado", "True").commit();
+        else
+            sharedPreferences.edit().putString("Oferta_Discapacitado", "False").commit();
     }
 }
