@@ -78,9 +78,9 @@ public class Activity_Postulacion extends AppCompatActivity {
                                         "Edad: " + edad.getText().toString() + "\n" +
                                         "Profesion: " + profesion.getText().toString() + "\n" +
                                         "Localidad: " + localidad.getText().toString() + "\n" +
-                                        "Datos de la VAcante: " + "\n" +
+                                        "Datos de la Vacante: " + "\n" +
                                         empleo_seleccionardo + "\n" +
-                                        "Datos Adicionales del Postulante: " +
+                                        "Datos Adicionales del Postulante: " + "\n" +
                                         "Disponibilidad para viajar: " + sharedPreferences.getString("Disponibilidad_Viajar", "") + "\n" +
                                         "Vehiculo Porpio: " + sharedPreferences.getString("Vehiculo_propio", "") + "\n" +
                                         "Contrato Temporal: " + sharedPreferences.getString("Contrato_Temporal", "") + "\n" +

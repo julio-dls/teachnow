@@ -19,4 +19,7 @@
     <string name="title_activity_empleo_item">empleo_item</string>
     <string name="title_activity_explorador_archivo">explorador_archivo</string>
     <string name="title_activity_explorador_archivos">explorador_archivos</string>
+    <string name="title_activity_perfil">perfil</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="title_activity_nav_header_navigation">nav_header_navigation</string>
 </resources>
