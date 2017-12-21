@@ -69,7 +69,7 @@ public class EmpleoAdapter extends BaseAdapter {
         RoundedBitmapDrawable roundedDrawable = RoundedBitmapDrawableFactory.create(ofertaView.getResources(), originalBitmap);
         //asignamos el CornerRadius
         roundedDrawable.setCornerRadius(originalBitmap.getHeight());
-
+        logoImg.setImageResource(R.drawable.logo_utn);
         logoImg.setImageDrawable(roundedDrawable);
         return ofertaView;
     }
