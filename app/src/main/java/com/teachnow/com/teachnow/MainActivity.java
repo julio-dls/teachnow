@@ -80,8 +80,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_buscar) {
             finish();
             startActivity(new Intent(this, Buscar.class));
-        } else if (id == R.id.nav_gallery) {
-
+        } else if (id == R.id.nav_perfil) {
+            finish();
+            startActivity(new Intent(this, MainActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
