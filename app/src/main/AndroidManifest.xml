@@ -28,10 +28,6 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity_Postulacion" />
         <activity android:name=".explorador_archivos" />
-        <activity
-            android:name=".perfil"
-            android:label="@string/title_activity_perfil"
-            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

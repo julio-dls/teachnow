@@ -104,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Emiail"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:maxLength="20"
                 android:paddingTop="10dp"
@@ -190,19 +190,6 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/limpiar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20sp"
-                android:background="@drawable/buttom_backgorud"
-                android:hint="Limpiar"
-                android:paddingLeft="30sp"
-                android:paddingRight="30sp"
-                android:textColorHint="@android:color/white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

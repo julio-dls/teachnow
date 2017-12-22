@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.teachnow.com.teachnow.controller.Controller;
 import com.teachnow.com.teachnow.correo.SendMail;
+
 //https://www.youtube.com/watch?v=BS6SuQbtU4E
 //https://androidstudiofaqs.com/tutoriales/personalizar-textview-en-android
 public class Activity_Postulacion extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class Activity_Postulacion extends AppCompatActivity {
     private String path_archivo;
     private EditText nombre;
     private EditText edad;
-    private EditText profesion;
+    private EditText direEmail;
     private EditText localidad;
     private TextView descripsion_empleo;
     private SharedPreferences sharedPreferences;
@@ -40,12 +41,18 @@ public class Activity_Postulacion extends AppCompatActivity {
 
         descripsion_empleo.setText("Postulacion: " + "\n" + empleo_seleccionardo);
 
-        nombre = (EditText) findViewById(R.id.nombre);
-        nombre.setText(sharedPreferences.getString("username", ""));
+        nombre = (EditText) findViewById(R.id.nombre_adjuntar);
+        nombre.setText(sharedPreferences.getString("nombre", ""));
         nombre.setEnabled(false);
-        edad = (EditText) findViewById(R.id.edad);
-        profesion = (EditText) findViewById(R.id.profesion);
-        localidad = (EditText) findViewById(R.id.localidad);
+        edad = (EditText) findViewById(R.id.edad_adjuntar);
+        edad.setText(sharedPreferences.getString("edad", ""));
+        edad.setEnabled(false);
+        direEmail = (EditText) findViewById(R.id.email_adjuntar);
+        direEmail.setText(sharedPreferences.getString("email", ""));
+        direEmail.setEnabled(false);
+        localidad = (EditText) findViewById(R.id.localidad_adjuntar);
+        localidad.setText(sharedPreferences.getString("residenciaActual", ""));
+        localidad.setEnabled(false);
 
         button_adjuntar = (Button) findViewById(R.id.adjuntar_btn);
         button_enviar = (Button) findViewById(R.id.send_mail_btn);
@@ -76,7 +83,7 @@ public class Activity_Postulacion extends AppCompatActivity {
                                 String subject = "Postulacion para esta Vacante";
                                 String message = "Nombre: " + nombre.getText().toString() + "\n" +
                                         "Edad: " + edad.getText().toString() + "\n" +
-                                        "Profesion: " + profesion.getText().toString() + "\n" +
+                                        "Email: " + direEmail.getText().toString() + "\n" +
                                         "Localidad: " + localidad.getText().toString() + "\n" +
                                         "Datos de la Vacante: " + "\n" +
                                         empleo_seleccionardo + "\n" +
@@ -97,6 +104,8 @@ public class Activity_Postulacion extends AppCompatActivity {
                         }
                     }).start();
                     Toast.makeText(getBaseContext(), "Correo Enviado Correctamente", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(new Intent(getApplicationContext(), Buscar.class));
                     break;
             }
         }
