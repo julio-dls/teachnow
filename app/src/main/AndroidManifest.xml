@@ -32,10 +32,6 @@
             android:name=".perfil"
             android:label="@string/title_activity_perfil"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".Navigation"
-            android:label="@string/title_activity_navigation"
-            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

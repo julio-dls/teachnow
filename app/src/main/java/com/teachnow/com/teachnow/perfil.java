@@ -20,17 +20,6 @@ public class perfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        /*Drawable originDrawable = getResources().getDrawable(R.drawable.profile);
-        Bitmap originBitmap = ((BitmapDrawable) originDrawable).getBitmap();
-
-        RoundedBitmapDrawable roundedDrawable = RoundedBitmapDrawableFactory.create(getResources(), originBitmap);
-
-        roundedDrawable.setCornerRadius(originBitmap.getHeight());
-
-        ImageView imageView = (ImageView) findViewById(R.id.imagePerfil);
-
-        imageView.setImageDrawable(roundedDrawable);*/
-
     }
 
 }

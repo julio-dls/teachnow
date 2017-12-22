@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.teachnow.com.teachnow.controller.Controller;
 import com.teachnow.com.teachnow.correo.SendMail;
-
+//https://www.youtube.com/watch?v=BS6SuQbtU4E
 //https://androidstudiofaqs.com/tutoriales/personalizar-textview-en-android
 public class Activity_Postulacion extends AppCompatActivity {
 

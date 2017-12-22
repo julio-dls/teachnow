@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void goToFindJobs() {
         finish();
-        startActivity(new Intent(context, Buscar.class));
+        startActivity(new Intent(context, MainActivity.class));
     }
 
     private boolean isLoginSuccessful(String username, String password) {
