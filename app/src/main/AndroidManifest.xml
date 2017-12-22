@@ -28,6 +28,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity_Postulacion" />
         <activity android:name=".explorador_archivos" />
+        <activity android:name=".PerfilUsucario"></activity>
     </application>
 
 </manifest>

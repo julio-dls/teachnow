@@ -33,6 +33,7 @@ public class Ofertas extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
                 sharedPreferences.edit()
                         .putString("seleccion_empleos", controller.obtenerEmpleoSelecionado((Empleo) listView.getItemAtPosition(position)))
+                        .putLong("idAviso", id)
                         .commit();
                 finish();
                 startActivity(new Intent(getApplicationContext(), Activity_Postulacion.class));

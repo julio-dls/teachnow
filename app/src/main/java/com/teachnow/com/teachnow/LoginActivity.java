@@ -32,30 +32,31 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
         String password = sharedPreferences.getString("password", "");
+
         if (!username.isEmpty() && !password.isEmpty()) {
             goToFindJobs();
         } else {
             enterBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                if (isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString())) {
-                    sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
-                    sharedPreferences.edit()
-                            .putString("username", userEt.getText().toString())
-                            .putString("password", passwordEt.getText().toString())
-                            .apply();
-                    goToFindJobs();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Datos Incorrecto", Toast.LENGTH_SHORT).show();
-                }
+                    if (isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString())) {
+                        sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
+                        sharedPreferences.edit()
+                                .putString("username", userEt.getText().toString())
+                                .putString("password", passwordEt.getText().toString())
+                                .apply();
+                        goToFindJobs();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Datos Incorrecto", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
         }
     }
 
     private void goToFindJobs() {
-        finish();
-        startActivity(new Intent(context, MainActivity.class));
+            finish();
+            startActivity(new Intent(context, MainActivity.class));
     }
 
     private boolean isLoginSuccessful(String username, String password) {

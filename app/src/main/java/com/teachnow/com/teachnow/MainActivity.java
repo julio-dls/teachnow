@@ -1,5 +1,6 @@
 package com.teachnow.com.teachnow;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -31,7 +32,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private SharedPreferences sharedPreferences;
-    private boolean registradoFlag = false;
     private EditText nombre;
     private EditText apellido;
     private EditText tipoDocumento;
@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
 
-                registradoFlag = true;
                 sharedPreferences = getApplication().getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
                 sharedPreferences.edit()
                         .putString("nombre", nombre.getText().toString())
@@ -95,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .putString("password", password.getText().toString())
                         .putString("username", username.getText().toString())
                         .putString("residenciaActual", residenciaActual.getText().toString())
-                        .putBoolean(" registradoFlag", registradoFlag)
                         .commit();
                 Toast.makeText(getBaseContext(), "Los Datos se Guardaron Correctamente", Toast.LENGTH_SHORT).show();
                 nombre.setText("");
@@ -155,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(this, Buscar.class));
         } else if (id == R.id.nav_perfil) {
             finish();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, PerfilUsucario.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
